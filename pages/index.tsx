@@ -1,11 +1,17 @@
 import type {NextPage} from 'next'
+import React from "react";
+import SubmitForm from "../components/submitForm";
+import TitleText from "../components/titleText";
+
 
 const Home: NextPage = () => {
-  return (
-    <div className="text-blue-300">
-      it works
-    </div>
-  )
-}
 
+
+	return (
+		<>
+			<TitleText/>
+			<SubmitForm ok accept cancel/>
+		</>
+	)
+}
 export default Home
