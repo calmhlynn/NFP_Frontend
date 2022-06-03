@@ -1,16 +1,20 @@
 import '../styles/globals.css'
 import type {AppProps} from 'next/app'
+import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+
+
+const client = new ApolloClient({
+	uri  : `http://localhost:8000/graphql`,
+	cache: new InMemoryCache()
+})
+
 
 function MyApp({ Component, pageProps }: AppProps) {
-	console.log("this is _app components")
 	return (
 		<>
-			<div className="mx-2 my-2">
-				{/*<LeftBar/>*/}
-				<div className="max-w-4xl w-full mx-auto">
-					<Component {...pageProps} />
-				</div>
-			</div>
+			<ApolloProvider client={client}>
+				<Component {...pageProps} />
+			</ApolloProvider>
 		</>
 	)
 }
