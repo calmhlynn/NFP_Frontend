@@ -4,9 +4,9 @@ export default function Document(){
     return (
 			<Html>
 				<Head/>
-				<body className="bg-neutral-900">
+				<body className="bg-neutral-900 text-white">
 					<Main/>
-					<NextScript/>
+					<NextScript />
 				</body>
 			</Html>
     )
